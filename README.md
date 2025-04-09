@@ -12,6 +12,10 @@ Além disso, este repositório serve como material complementar, contendo uma in
 
 Se você ainda não baixou a engine, é só acessar o site oficial: [godotengine.org](https://godotengine.org/). Há uma versão padrão e uma com suporte a C#. Se você não faz questão de usar C#, pode baixar a versão padrão. A engine está disponível para Windows, Linux e macOS.
 
+[Uma aula muito legal (porém em inglês) no YouTube, que implementa um projeto completo clonando o jogo "Asteroids"](https://youtu.be/FmIo8iBV1W8?si=ex3Z1YUIPjU4Fc24)
+
+Assets usados no projeto: [Space Shooter Redux by Kenney](https://kenney.nl/assets/space-shooter-redux)
+
 ---
 
 ## Godot e outras Game Engines
