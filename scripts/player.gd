@@ -19,15 +19,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# physics process chamada a cada fram fisico (diferente do frame normal)
+# physics process chamada a cada frame fisico (diferente do frame normal)
 func _physics_process(delta: float) -> void:
 	# get_axis retorna
-	# 1 se o primeiro input for pressionado
-	# -1 se o segundo input for pressionado
+	# -1 se o primeiro input (rotate_l) for pressionado
+	# 1 se o segundo input (rotate_r) for pressionado
 	# 0 se os dois ou nenhum for pressionado
 	var rotation_dir = Input.get_axis("rotate_l", "rotate_r")
 	# rotate mexe na propriedade "rotation" do transform
 	rotate(rotation_speed * rotation_dir * delta)
+	# delta: delta mede o tempo em milissegundos entre o ultimo frame e o atual
+	# se nao multiplicarmos essa conta por delta (que vai ser sempre um numero pequeno, tipo 0.002),
+	# o incremento fica dependente da framerate na qual o jogo esta rodando e quebra tudo.
+	# vale a pena pesquisar mais a fundo para entender o delta, eh muito importante saber usar.
+	# se houver uma proxima aula, explico mais a fundo sobre isso.
 
 	# queremos que a nave va na direcao na qual esta apontando
 	# entao rotacionamos a direcao de propulsao
@@ -39,5 +44,5 @@ func _physics_process(delta: float) -> void:
 		# se o player estiver apertando alguma direcao, vai naquela direcao acelerando rapido
 		velocity = velocity.move_toward(propulsion_dir * max_speed, acceleration)
 	
-	# move_and_slide faz o node andar seguindo o vetor velocidade
+	# move_and_slide faz o character body andar seguindo o vetor velocidade
 	move_and_slide()
