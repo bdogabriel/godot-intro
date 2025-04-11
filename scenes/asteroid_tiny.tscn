@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://siwvfem8noex"]
+
+[ext_resource type="Script" uid="uid://baj3tnp5jkv8t" path="res://scripts/asteroid_tiny.gd" id="1_c7jf3"]
+[ext_resource type="Texture2D" uid="uid://dg820lvcqd4tu" path="res://addons/kenney_space-shooter-redux/PNG/Meteors/meteorGrey_tiny1.png" id="1_ldpaj"]
+[ext_resource type="Script" uid="uid://b5qmpm86tqr8a" path="res://scripts/screen_warp_component_2d.gd" id="2_c7jf3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkurl"]
+radius = 9.0
+
+[node name="AsteroidTiny" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_c7jf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ldpaj")
+
+[node name="ScreenWarpComponent2D" type="Node2D" parent="."]
+script = ExtResource("2_c7jf3")
+metadata/_custom_type_script = "uid://b5qmpm86tqr8a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mkurl")
